@@ -1,0 +1,37 @@
+<div>
+
+<h1 class="text-3xl font-bold underline">player works!</h1>
+
+<button *ngIf="!afficher_bloc_players" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" (click)="afficher_joueurs()">Afficher joueurs</button>
+<button *ngIf="afficher_bloc_players" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" (click)="cacher_joueurs()">Cacher joueurs</button>
+
+<div *ngIf="afficher_bloc_players">
+    <h2>Les joueurs</h2>
+    <table class="border-separate border-spacing-2 border border-slate-500">
+        <thead>
+            <th class="border border-slate-700">id</th>
+            <th class="border border-slate-700">Pseudo</th>
+            <th class="border border-slate-700">Nom</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of this.players">
+                <td class="border border-slate-700">{{player.id}}</td>
+                <td class="border border-slate-700">{{player.pseudo}}</td>
+                <td class="border border-slate-700">{{player.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <h2>Ajouter joueur</h2>
+    </div>
+    <form (ngSubmit)="onSubmitForm()">
+        <label for="Pseudo"></label>
+        <input name="pseudo" type="text" [(ngModel)]="player.pseudo">
+        <br>
+        <label for="Nom"></label>
+        <input name="nom" type="text" [(ngModel)]="player.name">
+        <button type="submit">Créer !</button>
+    </form>
+    </div>
+
+</div>

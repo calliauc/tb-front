@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "tb-front"
+  "defaultProject": "tb-front",
+  "cli": {
+    "analytics": false
+  }
 }
