@@ -28,7 +28,7 @@ export class PlayerComponent implements OnInit {
     actualiser_liste(){
       this.playerService.get_players().subscribe((result) => {
         this.players = result;
-      });        
+      });
     }
 
     afficher_joueurs(){
