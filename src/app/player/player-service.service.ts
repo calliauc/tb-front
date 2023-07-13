@@ -16,12 +16,12 @@ export class PlayerServiceService {
   constructor(private http: HttpClient) { }
 
   public get_players() {
-    return this.http.get<Player[]>(this.url_docker, {responseType: 'json'});
+    return this.http.get<Player[]>(this.url_local, {responseType: 'json'});
   }
 
   public create_player(player: NewPlayer){
     console.log(player);
-    return this.http.post<NewPlayer>(this.url_docker, player, {responseType: 'json'}).subscribe();
+    return this.http.post<NewPlayer>(this.url_local, player, {responseType: 'json'}).subscribe();
   }
 
 }
