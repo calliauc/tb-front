@@ -9,17 +9,19 @@ import { Observable } from 'rxjs';
 })
 export class PlayerServiceService {
 
-  url: string = "http://localhost:8080/players"
+  url_docker: string = "http://backend:8080/players"
+  url_local: string = "http://localhost:8080/players"
+  url_server: string = "http://192.168.0.80:8123/players"
 
   constructor(private http: HttpClient) { }
 
   public get_players() {
-    return this.http.get<Player[]>(this.url, {responseType: 'json'});
+    return this.http.get<Player[]>(this.url_docker, {responseType: 'json'});
   }
 
   public create_player(player: NewPlayer){
     console.log(player);
-    return this.http.post<NewPlayer>(this.url, player, {responseType: 'json'}).subscribe();
+    return this.http.post<NewPlayer>(this.url_docker, player, {responseType: 'json'}).subscribe();
   }
 
 }
