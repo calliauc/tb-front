@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PlayerServiceService {
 
   url_docker: string = "http://backend:8080/players"
-  url_local: string = "http://localhost:8080/players"
+  url_local: string = "http://localhost:9000/players"
   url_server: string = "http://192.168.0.80:8123/players"
 
   constructor(private http: HttpClient) { }
