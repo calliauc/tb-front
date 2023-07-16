@@ -13,7 +13,7 @@ export class PlayerServiceService {
   constructor(private http: HttpClient) { }
 
   URL_API: string = environment.API_URL;
-  ENDPOINT: string = "/players";
+  ENDPOINT: string = "/joueurs";
 
   URL: string = this.URL_API + this.ENDPOINT;
 
