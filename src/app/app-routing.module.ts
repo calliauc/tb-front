@@ -5,8 +5,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent},
-  { path: '*', component: MainPageComponent},
-  { path: 'players', component: PlayerComponent}
+  { path: 'players', component: PlayerComponent},
+  { path: '**', component: MainPageComponent}
 ];
 
 @NgModule({
