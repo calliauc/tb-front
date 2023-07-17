@@ -1,21 +1,33 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+export class MenuComponent implements AfterViewInit {
 
   menu: HTMLElement|null = null;
+  lienMenu: HTMLElement|null = null;
+  URL_APP: string = environment.APP_URL;
 
   constructor () {  }
 
-  @ViewChild('menuTest') set playerRef(ref: ElementRef<HTMLElement>) {
+  afficheMenu: boolean = false;
+
+  @ViewChild('menuTest') set menuRef(ref: ElementRef<HTMLElement>) {
     this.menu = ref.nativeElement;
   }
-  
-  afficheMenu: boolean = false;
+
+  @ViewChild('menuLien') set lienMenuRef(ref: ElementRef<HTMLElement>) {
+    this.lienMenu = ref.nativeElement;
+  }
+
+  ngAfterViewInit(): void {
+    this.lienMenu?.setAttribute("href", this.URL_APP);
+  }
+
 
   public gererMenu(){
     
