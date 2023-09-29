@@ -42,9 +42,11 @@ export class PlayerComponent implements OnInit {
     }
 
     onSubmitForm(){
-      console.log(this.playerService.create_player(this.player));
-      this.actualiser_liste();
-      this.player.name="";
-      this.player.pseudo="";
+      if(this.player.name!="" && this.player.pseudo!="")
+        this.playerService.create_player(this.player).subscribe(_ => {
+          this.actualiser_liste();
+          this.player.name="";
+          this.player.pseudo="";
+        }).unsubscribe;
     }
   }

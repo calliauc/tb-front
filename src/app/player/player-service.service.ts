@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Player } from './player';
 import { NewPlayer } from './new-player';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,8 @@ export class PlayerServiceService {
     return this.http.get<Player[]>(this.URL, {responseType: 'json'});
   }
 
-  public create_player(player: NewPlayer){
-    console.log(player);
-    return this.http.post<NewPlayer>(this.URL, player, {responseType: 'json'}).subscribe();
+  public create_player(player: NewPlayer): Observable<NewPlayer> {
+    return this.http.post<NewPlayer>(this.URL, player, {responseType: 'json'});
   }
 
 }
