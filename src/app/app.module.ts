@@ -10,6 +10,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { PlayerLigneComponent } from './player/player-ligne/player-ligne.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HeaderComponent } from './header/header.component';
     MainPageComponent,
     MenuComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    PlayerLigneComponent
   ],
   imports: [
     BrowserModule,

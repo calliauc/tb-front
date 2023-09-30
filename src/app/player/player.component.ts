@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from './player';
-import { PlayerServiceService } from './player-service.service';
-import { NewPlayer } from './new-player';
+import { Player } from './models/player';
+import { PlayerServiceService } from './services/player-service.service';
+import { NewPlayer } from './models/new-player';
 
 @Component({
   selector: 'app-player',
-  templateUrl: './player.component.html',
-  styleUrls: ['./player.component.css']
+  templateUrl: './player.component.html'
 })
 export class PlayerComponent implements OnInit {
 
