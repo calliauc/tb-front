@@ -6,9 +6,7 @@ import { Player } from '../models/player';
   templateUrl: './player-ligne.component.html'
 })
 export class PlayerLigneComponent {
-  @Input() player: Player;
+  @Input() player: Player = new Player("Pseudo", "Name", 0);
 
-  constructor(){
-    this.player = new Player("","",1);
-  }
+
 }
