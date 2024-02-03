@@ -11,7 +11,6 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PlayerLigneComponent } from './player/player-ligne/player-ligne.component';
-import { EditPlayerComponent } from './player/edit-player/edit-player.component';
 import { PlayerListComponent } from './player/player-list/player-list.component';
 
 @NgModule({
@@ -22,9 +21,8 @@ import { PlayerListComponent } from './player/player-list/player-list.component'
     MenuComponent,
     FooterComponent,
     HeaderComponent,
-    PlayerLigneComponent,
-    EditPlayerComponent,
-    PlayerListComponent
+    PlayerListComponent,
+    PlayerLigneComponent
   ],
   imports: [
     BrowserModule,
